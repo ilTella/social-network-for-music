@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNM - Social Network for Music</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="../css/style.css" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<div class="container text-center mt-4 pt-5">
+    <h2>Public playlists</h2>
+    <p>Explore the content created by the community!</p>
+    <h5>Filter:</h5>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="input-name" placeholder="name" spellcheck="false">
+                <label for="input-name">Name</label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-10">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="input-tag" placeholder="tag" spellcheck="false">
+                        <label for="input-tag">Tags</label>
+                    </div>
+                </div>
+                <div class="col-2 pt-2">
+                    <button type="submit" class="btn mb-3" onclick="addTag()">Add</button>
+                </div>
+            </div>
+            <div id="tag-alert"></div>
+            <div id="tag-zone">
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-10">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="input-track" placeholder="track" spellcheck="false">
+                        <label for="input-tag">Tracks</label>
+                    </div>
+                </div>
+                <div class="col-2 pt-2">
+                    <button type="submit" class="btn mb-3" onclick="addTrack()">Add</button>
+                </div>
+            </div>
+            <div id="track-alert"></div>
+            <div id="track-zone">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button type="submit" class="btn mb-3" onclick="initializePlaylistsSearch()">Search</button>
+        </div>
+    </div>
+
+    <div id="container-playlist" class="row g-4 mt-2 p-4">
+        <div id="card-playlist" class="col-md-auto d-none">
+            <div class="card h-100" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title"></h4>
+                    <p class="card-text description"></p>
+                    <div class="card-text followers"></div>
+                    <h5 class="card-text tracks"></h5>
+                    <div class="card-tags"></div>
+                    <div class="card-text owner-badge"></div>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="../lib/menu.js"></script>
+<script src="../lib/public-playlists.js"></script>
+<script src="../lib/multiple-playlists.js"></script>
+<script src="../lib/playlists.js"></script>
+<script src="../lib/authentication.js"></script>
+<script>
+    var params = new URLSearchParams(window.location.search);
+    var tag = params.get("tag");
+
+    if (tag != undefined) {
+        document.getElementById("tag-zone").innerHTML +=
+        `
+        <div id="track-${tag}" class="alert alert-success alert-dismissible fade show tag-name" role="alert">
+            ${tag}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        `;
+        initializePlaylistsSearch();
+    } else {
+        getPublicPlaylists();
+    }
+</script>
+</body>
+
+</html>

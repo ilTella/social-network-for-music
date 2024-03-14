@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNM - Social Network for Music</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="../css/style.css" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<div class="mt-4 pt-5" id="back">
+    <a href="login.html" class="btn p-2 m-3">Back to login</a>
+</div>
+
+<div class="container text-center">
+    <div id="registration-head" class="p-3 m-3">
+        <h2>Registration</h2>
+    </div>
+    <div id="registration-info" class="p-2 m-2">
+        <h3>Personal data</h3>
+        <div class="form-floating m-3">
+            <input type="text" class="form-control" id="input-username" placeholder="username" required>
+            <label for="input-username">Username</label>
+        </div>
+        <div class="form-floating m-3">
+            <input type="email" class="form-control" id="input-email" placeholder="email" required>
+            <label for="input-email">Email</label>
+        </div>
+        <div class="form-floating m-3">
+            <input type="password" class="form-control" id="input-password" placeholder="password" required>
+            <label for="input-password">Password</label>
+        </div>
+        <div class="form-floating m-3">
+            <input type="password" class="form-control" id="input-repeat-password" placeholder="repeat-password" required>
+            <label for="input-repeat-password">Repeat password</label>
+        </div>
+    </div>
+    <div id="registration-preferences" class="p-2 m-2">
+        <h3>Preferences</h3>
+        <h5>Favorite artists</h5>
+        <div class="row mb-2">
+            <div class="col-10">
+                <input id="input-artist" type="text" class="form-control mb-2" placeholder="Search artist" onkeypress="searchArtists(this.value)">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-menu dropdown-toggle" type="button" data-bs-toggle="dropdown">Artists found</button>
+                <ul id="artists-dropdown" class="dropdown-menu dropdown-menu-dark"></ul>
+            </div>
+            <div id="artist-zone"></div>
+        </div>
+        <h5>Favorite genres</h5>
+        <div class="row mb-2">
+            <div class="col-10">
+                <input id="input-genre" type="text" class="form-control mb-2" placeholder="Search genre" onkeypress="searchGenres(this.value)">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-menu dropdown-toggle" type="button" data-bs-toggle="dropdown">Genres found</button>
+                <ul id="genres-dropdown" class="dropdown-menu dropdown-menu-dark"></ul>
+            </div>
+            <div id="genre-zone"></div>
+        </div>
+    </div>
+    <button class="btn mb-3" onclick="register()">Register</button>
+    <div id="result-alert"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="../lib/menu.js"></script>
+<script src="../lib/authentication.js"></script>
+<script src="../lib/user.js"></script>
+
+<script>
+    var genres = [];
+    
+    getGenres();
+</script>
+
+</body>

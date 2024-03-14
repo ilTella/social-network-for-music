@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNM - Social Network for Music</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="../css/style.css" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<div class="mt-4 pt-5" id="back">
+    <a onclick="history.back()" class="btn p-2 m-3">Back</a>
+</div>
+
+<div class="container text-center">
+    <div id="container-info">
+        <h2 id="playlist-name" class="p-2"></h2>
+        <p id="playlist-description" class="p-2"></p>
+        <div id="playlist-followers" class="p-2"></div>
+        <div id="playlist-num-tracks" class="p-2"></div>
+        <div id="playlist-duration" class="p-2"></div>
+        <div id="playlist-tags" class="p-2"></div>
+        <div class="pt-3" id="playlist-button"></div>
+        <div id="playlist-placeholder" class="p-2"></div>
+    </div>
+
+    <div id="container-tracks" class="row g-4 mt-2 p-4">
+        <div id="track" class="col-12 col-lg-6 d-none">
+            <div class="container track-container">
+                <div class="row">
+                    <div class="col-6">
+                        <img class="track-image p-3 img-fluid" alt="...">
+                    </div>
+                    <div class="col-6 mt-2 p-2 track-info">
+                        <h4 class="track-title"></h4>
+                        <h5 class="track-album"></h5>
+                        <div class="track-artists"></div>
+                        <div class= "track-duration pt-2"></div>
+                        <div class="track-release pt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="../lib/menu.js"></script>
+<script src="../lib/single-playlist.js"></script>
+<script src="../lib/user-playlists.js"></script>
+<script src="../lib/playlists.js"></script>
+<script src="../lib/tracks.js"></script>
+<script src="../lib/utils.js"></script>
+<script src="../lib/authentication.js"></script>
+
+<script>
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get("playlistId")
+
+    getOnePlaylist(id, showPlaylistContent);
+</script>
+
+</body>

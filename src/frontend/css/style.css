@@ -1,0 +1,79 @@
+body {
+    background-color: rgb(29, 28, 28);
+}
+
+.card {
+    background-color: rgb(29, 28, 28);
+    border-color: rgb(103, 206, 103);
+    border-width: 2px;
+}
+
+.track-container {
+    border: 2px solid rgb(103, 206, 103);
+    border-radius: 10px;
+}
+
+.card-title, h1, h2, h3, .track-title, .nav-item a {
+    color: rgb(103, 206, 103);
+    font-family: 'Lucida Sans', Arial, sans-serif ;
+}
+
+.track-album {
+    color: rgb(147, 255, 147);
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}
+
+.track-duration, .track-release {
+    font-size: smaller;
+    color: white;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}
+
+input, label, .artist-name, .genre-name, .tag-name {
+    color: black;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}
+
+h4, h5, h6, p, .dropdown-item, .card-text, .track-artists, #playlist-description, #playlist-followers, #playlist-num-tracks, #playlist-duration, #check-public-label {
+    color: white;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}
+
+.btn {
+    --bs-btn-bg: rgb(29, 28, 28);
+    border-width: 1px;
+    --bs-btn-border-color: rgb(103, 206, 103);
+    --bs-btn-color: rgb(103, 206, 103);
+    --bs-btn-hover-bg: rgb(103, 206, 103);
+    font-family: 'Geneva', 'Tahoma', sans-serif;
+}
+
+.btn.btn-delete {
+    --bs-btn-border-color: rgb(206, 106, 103);
+    --bs-btn-color: rgb(206, 106, 103);
+    --bs-btn-hover-bg: rgb(204, 84, 82);
+    --bs-btn-hover-color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Lucida Sans', Arial, sans-serif ;
+}
+
+.track-album a {
+    color: rgb(165, 241, 165);
+    font-family: 'Lucida Sans', Arial, sans-serif ;
+}
+
+a.new-playlist {
+    color: rgb(103, 206, 103);
+}
+
+a:hover {
+    color: rgb(202, 247, 202);
+}
+
+.register-link a, a.add-tracks-link {
+    text-decoration: underline;
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNM - Social Network for Music</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="../css/style.css" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+</head>
+
+<body>
+
+<div id="menu"></div>
+
+<div class="mt-4 pt-5" id="back">
+    <a onclick="history.back()" class="btn p-2 m-3">Back</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Playlist creator</h2>
+            <p>Another wonderful playlist is about to be created</p>
+        </div>
+        <div class="col-12 text-center">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="input-name" placeholder="playlist name" spellcheck="false">
+                <label for="input-name">Name</label>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="input-description" placeholder="playlist description" spellcheck="false">
+                <label for="input-description">Description</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="check-public" onclick="changeIcon()" checked>
+                <label id="check-public-label" class="form-check-label" for="check-public-label">public playlist 🌍</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="input-tag" placeholder="tag" spellcheck="false">
+                    <label for="input-tag">Tags</label>
+                </div>
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn mb-3" onclick="addTag()">Add</button>
+            </div>
+        </div>
+        <div id="tag-alert"></div>
+        <div id="tag-zone" class="col"></div>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn m-3" onclick="submitCreation()">Create playlist</button>
+        </div>
+        <div id="creation-result" class="col"></div> 
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="../lib/menu.js"></script>
+<script src="../lib/edit-playlists.js"></script>
+<script src="../lib/playlists.js"></script>
+<script src="../lib/authentication.js"></script>
+
+</body>
